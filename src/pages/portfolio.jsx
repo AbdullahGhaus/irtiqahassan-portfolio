@@ -8,8 +8,8 @@ const Portfolio = () => {
     return (
         <ScrollContainer>
             <CategoryMain />
-            <SmoothScroll />
-            <CategoryMain />
+            {/* <SmoothScroll /> */}
+            {/* <CategoryMain /> */}
         </ScrollContainer>
     )
 }
