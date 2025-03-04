@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+* {
+    margin: 0;
+}
+
+/* fonts - start */
+
+@font-face {
+    font-family: "Poppins";
+    src: url(assets/Poppins-Regular.ttf);
+}
+
+*,
+html,
+body,
+a,
+div,
+span,
+input,
+textarea {
+    font-family: "Poppins";
+}
+
+@font-face {
+    font-family: "nigelina";
+    src: url(assets/nigelinaregular-l301g.otf);
+}
+
+.nigelina {
+    font-family: "nigelina";
+}
+
+/* fonts - end */
+
+.category_main_image {
+    background: url(assets/categoryMain.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
