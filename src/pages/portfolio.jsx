@@ -2,15 +2,16 @@ import React from 'react'
 import CategoryMain from '../components/categoryMain'
 import SmoothScroll from '../components/smoothScroll'
 import { ScrollContainer, HorizontalSection } from "react-nice-scroll";
+import CustomerCare from '../components/customerCare';
 
 
 const Portfolio = () => {
     return (
-        <ScrollContainer>
+        <div className='flex flex-col'>
             <CategoryMain />
-            {/* <SmoothScroll /> */}
-            {/* <CategoryMain /> */}
-        </ScrollContainer>
+            <SmoothScroll />
+            <CustomerCare />
+        </div>
     )
 }
 
