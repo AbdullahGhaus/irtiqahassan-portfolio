@@ -30,11 +30,25 @@ const HorizontalSlider = () => {
         });
     }, [scrollYProgress]);
 
+    useEffect(() => {
+        function handleMessage(event) {
+            if (event.data.scroll !== undefined) {
+                window.scrollTo({
+                    left: event.data.scroll, // Scroll horizontally based on main page scroll
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        window.addEventListener("message", handleMessage);
+        return () => window.removeEventListener("message", handleMessage);
+    }, []);
+
     return (
         <div ref={targetRef} className="relative" style={{ height: `${slides * 100}vh` }}>
 
             {/* Scroll Progress Line (Hidden when not in view) */}
-           
+
 
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
                 <motion.div style={{ x: smoothX }} className="flex">
