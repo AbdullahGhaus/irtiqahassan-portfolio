@@ -1,6 +1,7 @@
 import './App.css'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Portfolio from './pages/portfolio'
+import { useEffect } from 'react';
 
 function App() {
 
