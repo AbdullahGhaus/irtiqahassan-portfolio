@@ -42,7 +42,7 @@ const CustomerCare = () => {
 
 
     return (
-        <div className="h-screen relative">
+        <div className="min-h-screen relative">
             {/* Title and Border Lines */}
             <div className="relative flex items-center justify-center z-[10]">
                 <div className="absolute left-0 top-[85px] w-[53%] border-t border-white"></div>
@@ -61,11 +61,11 @@ const CustomerCare = () => {
                     modules={[Navigation, EffectFade]}
                     effect="fade"
                     fadeEffect={{ crossFade: true }}
-                    className="w-full h-screen"
+                    className="w-full min-h-screen"
                 >
                     {slides.map((_, index) => (
                         <SwiperSlide key={index}>
-                            <div className="relative h-screen">
+                            <div className="relative min-h-screen">
                                 <img
                                     src={_?.img}
                                     className="absolute inset-0 object-cover w-full h-full z-[0]"

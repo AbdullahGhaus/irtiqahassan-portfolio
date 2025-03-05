@@ -11,7 +11,7 @@ const SmoothScroll = () => {
         <div className=''>
             {
                 [{}].map((_, index) => (
-                    <div key={index} className="grid grid-cols-2 h-screen relative">
+                    <div key={index} className="grid grid-cols-2 min-h-screen relative">
                         <img src={slider1} className="absolute bottom-[9%] left-[37%] w-[400px] h-[300px] z-[10]" />
                         <div className="flex items-center">
                             <div className="flex flex-col gap-3 relative">

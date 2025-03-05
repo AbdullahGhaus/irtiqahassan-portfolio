@@ -8,7 +8,7 @@ const CategoryMain = () => {
     ];
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 h-screen bg-fixed category_main_image">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 min-h-screen bg-fixed category_main_image">
             {data.map((x, i) => (
                 <div 
                     key={i} 
