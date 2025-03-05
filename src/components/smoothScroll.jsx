@@ -18,7 +18,7 @@ const SmoothScroll = () => {
                                 <div className="w-52 h-[1.5px] bg-[#707070]" />
                                 <div className="flex flex-col gap-2 pl-20 w-[50%]">
                                     <div className="text-[#515151] text-[11px] uppercase">
-                                        {index} privacy & space
+                                        privacy & space
                                     </div>
                                     <div className="text-[#515151] text-[45px] nigelina leading-12 w-[80%]">
                                         EXPLORE OUR HOME

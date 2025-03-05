@@ -2,30 +2,19 @@ import './App.css'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Portfolio from './pages/portfolio'
 import { useEffect } from 'react';
+import CategoryMain from './components/categoryMain';
+import SmoothScroll from './components/smoothScroll';
+import CustomerCare from './components/customerCare';
+import HorizontalSlider from './components/horizontalSlider';
 
 function App() {
-
-
-  useEffect(() => {
-    const sendHeight = () => {
-      const height = document.documentElement.scrollHeight; // More accurate height
-      window.parent.postMessage({ type: "iframeResize", height }, "*");
-    };
-
-    sendHeight(); // Send height initially
-    window.addEventListener("resize", sendHeight); // Update height on resize
-    window.addEventListener("load", sendHeight); // Ensure it runs after content loads
-
-    return () => {
-      window.removeEventListener("resize", sendHeight);
-      window.removeEventListener("load", sendHeight);
-    };
-  }, []);
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Portfolio />} />
+        <Route path="/section-one" element={<CategoryMain />} />
+        <Route path="/section-two" element={<SmoothScroll />} />
+        <Route path="/section-three" element={<CustomerCare />} />
       </Routes>
     </Router>
   )

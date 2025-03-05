@@ -16,7 +16,7 @@ const HorizontalSlider = () => {
     });
 
     // Ensure horizontal scroll stops at the last slide
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${(slides - 1) * 100}%`]);
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${100 * (slides - 1)}%`]);
     const smoothX = useSpring(x, { stiffness: 100, damping: 30, mass: 1 });
 
     const arrowPosition = useTransform(scrollYProgress, [0, 1], ["0%", `${70 * (slides - 1)}%`]);
