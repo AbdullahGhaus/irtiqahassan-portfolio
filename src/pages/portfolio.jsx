@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CategoryMain from '../components/categoryMain'
 import SmoothScroll from '../components/smoothScroll'
 import { ScrollContainer, HorizontalSection } from "react-nice-scroll";
