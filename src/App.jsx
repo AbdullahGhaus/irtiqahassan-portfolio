@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/section-one" element={<CategoryMain />} />
-        <Route path="/section-two" element={<SmoothScroll />} />
+        <Route path="/section-two" element={<HorizontalSlider />} />
         <Route path="/section-three" element={<CustomerCare />} />
       </Routes>
     </Router>

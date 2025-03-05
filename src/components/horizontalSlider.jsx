@@ -2,51 +2,45 @@ import React, { useRef, useState, useEffect } from "react";
 import hs1 from "../assets/hs-1.png";
 import { ArrowRight } from "lucide-react";
 import { motion, useTransform, useScroll, useSpring } from "framer-motion";
-import slider1 from "../assets/slider-1.jpg";
+import slider1 from "../assets/slider-1.jpg"
 import { HiOutlineArrowRight } from "react-icons/hi";
 
+
 const HorizontalSlider = () => {
-    const slides = 3;
+    const slides = 3; // Number of slides
     const targetRef = useRef(null);
     const [isInView, setIsInView] = useState(false);
 
     const { scrollYProgress } = useScroll({
         target: targetRef,
-        offset: ["start start", "end end"],
+        offset: ["start start", "end start"],
     });
 
-    // Ensure horizontal scroll stops at the last slide
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${100 * (slides - 1)}%`]);
+    // Slowing down the scroll effect
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${100 * (slides - 2)}%`]);
     const smoothX = useSpring(x, { stiffness: 100, damping: 30, mass: 1 });
 
+    // Arrow movement along the progress line
     const arrowPosition = useTransform(scrollYProgress, [0, 1], ["0%", `${70 * (slides - 1)}%`]);
 
+    // Detect if section is in view
     useEffect(() => {
         return scrollYProgress.onChange((latest) => {
-            setIsInView(latest > 0.05 && latest < 0.95);
+            setIsInView(latest > 0.05 && latest < 0.95); // Adjusted range to avoid lingering visibility
         });
     }, [scrollYProgress]);
 
     return (
         <div ref={targetRef} className="relative" style={{ height: `${slides * 100}vh` }}>
-            {/* Scroll Progress Line */}
-            <motion.div
-                style={{ opacity: isInView ? 1 : 0, visibility: isInView ? "visible" : "hidden" }}
-                className="fixed bottom-[10%] right-[0%] w-[95%] h-[1px] bg-white z-50 transition-opacity duration-500"
-            >
-                <motion.div
-                    style={{ left: arrowPosition }}
-                    className="absolute -top-0 translate-x-1/2 -translate-y-[16px] bg-white p-2 rounded-full"
-                >
-                    <HiOutlineArrowRight />
-                </motion.div>
-            </motion.div>
+
+            {/* Scroll Progress Line (Hidden when not in view) */}
+           
 
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <motion.div style={{ x: smoothX }} className="flex ">
-                    {[{}, {}, {}].map((_, index) => (
+                <motion.div style={{ x: smoothX }} className="flex">
+                    {[...Array(slides)]?.map((_, index) => (
                         <div key={index} className="grid grid-cols-2 h-screen w-screen relative">
-                            <img src={slider1} className="absolute bottom-[9%] left-[37%] w-[400px] h-[300px] z-[10]" />
+                            <img src={slider1} className="absolute bottom-[9%] left-[37%] w-[400px] h-[300px] z-[10] " />
                             <div className="flex items-center">
                                 <div className="flex flex-col gap-3 relative">
                                     <div className="w-52 h-[1.5px] bg-[#707070]" />
@@ -81,4 +75,15 @@ const HorizontalSlider = () => {
 export default HorizontalSlider;
 
 
-
+// <motion.div
+// style={{ opacity: isInView ? 1 : 0, visibility: isInView ? "visible" : "hidden" }}
+// className="fixed bottom-[10%] right-[0%] w-[95%] h-[1px] bg-white z-50 transition-opacity duration-500"
+// >
+// {/* Moving Arrow */}
+// <motion.div
+//     style={{ left: arrowPosition }}
+//     className="absolute -top-0 translate-x-1/2 -translate-y-[16px] bg-white p-2 rounded-full"
+// >
+//     <HiOutlineArrowRight />
+// </motion.div>
+// </motion.div>
