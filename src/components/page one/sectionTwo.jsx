@@ -56,6 +56,7 @@ const PageOneSectionTwo = () => {
                 <Link
                     to={item?.url}
                     key={index}
+                    target="_top"
                     className="flex flex-col items-center gap-3 justify-center relative group border border-[#ffffff3d]"
                     onMouseEnter={() => setHoveredItem(index)}
                     onMouseLeave={() => setHoveredItem(null)}
