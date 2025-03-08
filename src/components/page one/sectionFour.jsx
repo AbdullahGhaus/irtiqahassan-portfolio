@@ -1,18 +1,17 @@
-import React, { useRef, useState } from "react";
-import hs1 from "../assets/hs-1.png";
+import React, { useRef } from "react";
+import hs1 from "../../assets/hs-1.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { Navigation, EffectFade } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import test2 from "../assets/test-2.jpg"
-import test3 from "../assets/test-3.jpg"
-import test4 from "../assets/test-4.jpg"
+import test2 from "../../assets/test-2.jpg"
+import test3 from "../../assets/test-3.jpg"
+import test4 from "../../assets/test-4.jpg"
 
-const CustomerCare = () => {
+const PageOneSectionFour = () => {
     const swiperRef = useRef(null);
-    const [activeIndex, setActiveIndex] = useState(0);
     const slides = [
         {
             img: hs1,
@@ -56,11 +55,11 @@ const CustomerCare = () => {
             <div className="relative">
                 <Swiper
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
-                    onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                     navigation={false}
                     modules={[Navigation, EffectFade]}
                     effect="fade"
                     fadeEffect={{ crossFade: true }}
+                    loop
                     className="w-full min-h-screen"
                 >
                     {slides.map((_, index) => (
@@ -90,21 +89,15 @@ const CustomerCare = () => {
 
                 {/* Custom Navigation Buttons */}
                 <button
-                    className={`absolute top-1/2 left-[10%] z-10 p-3 rounded-full transition bg-black/30 ${activeIndex === 0 ? "opacity-50 cursor-not-allowed" : "opacity-100 cursor-pointer"
-                        }`}
+                    className={`absolute top-1/2 left-[10%] z-10 p-3 rounded-full transition bg-black/30 cursor-pointer`}
                     onClick={() => swiperRef.current?.slidePrev()}
-                    disabled={activeIndex === 0}
                 >
                     <ChevronLeft size={32} color="#C0A07A" />
                 </button>
 
                 <button
-                    className={`absolute top-1/2 right-[10%] z-10 p-3 rounded-full transition bg-black/30 ${activeIndex === slides.length - 1
-                        ? "opacity-50 cursor-not-allowed"
-                        : "opacity-100 cursor-pointer"
-                        }`}
+                    className={`absolute top-1/2 right-[10%] z-10 p-3 rounded-full transition bg-black/30 cursor-pointer`}
                     onClick={() => swiperRef.current?.slideNext()}
-                    disabled={activeIndex === slides.length - 1}
                 >
                     <ChevronRight size={32} color="#C0A07A" />
                 </button>
@@ -113,4 +106,4 @@ const CustomerCare = () => {
     );
 };
 
-export default CustomerCare;
+export default PageOneSectionFour;

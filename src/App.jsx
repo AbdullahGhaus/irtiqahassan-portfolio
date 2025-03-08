@@ -1,20 +1,29 @@
 import './App.css'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Portfolio from './pages/portfolio'
-import { useEffect } from 'react';
-import CategoryMain from './components/categoryMain';
-import SmoothScroll from './components/smoothScroll';
-import CustomerCare from './components/customerCare';
-import HorizontalSlider from './components/horizontalSlider';
+import PageOneSectionOne from './components/page one/sectionOne';
+import PageOneSectionTwo from './components/page one/sectionTwo';
+import PageOneSectionThree from './components/page one/sectionThree';
+import PageOneSectionFour from './components/page one/sectionFour';
+import PageTwoSectionOne from './components/page two/sectionOne';
+import PageTwoSectionTwo from './components/page two/sectionTwo';
+import PageTwoSectionThree from './components/page two/sectionThree';
+import PageThreeSectionOne from './components/page three/sectionOne';
 
 function App() {
 
   return (
     <Router>
       <Routes>
-        <Route path="/section-one" element={<CategoryMain />} />
-        <Route path="/section-two" element={<HorizontalSlider />} />
-        <Route path="/section-three" element={<CustomerCare />} />
+        <Route path="/page-one/section-one" element={<PageOneSectionOne />} />
+        <Route path="/page-one/section-two" element={<PageOneSectionTwo />} />
+        <Route path="/page-one/section-three" element={<PageOneSectionThree />} />
+        <Route path="/page-one/section-four" element={<PageOneSectionFour />} />
+
+        <Route path="/page-two/section-one" element={<PageTwoSectionOne />} />
+        <Route path="/page-two/section-two" element={<PageTwoSectionTwo />} />
+        <Route path="/page-two/section-three" element={<PageTwoSectionThree />} />
+
+        <Route path="/page-three/section-one" element={<PageThreeSectionOne />} />
       </Routes>
     </Router>
   )

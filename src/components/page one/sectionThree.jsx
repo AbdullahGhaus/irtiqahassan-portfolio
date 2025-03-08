@@ -1,12 +1,11 @@
 import React from 'react'
 import { ScrollContainer, HorizontalSection } from "react-nice-scroll";
 import "react-nice-scroll/dist/styles.css";
-
-import hs1 from "../assets/hs-1.png";
+import hs1 from "../../assets/hs-1.png";
 import { ArrowRight } from "lucide-react";
-import slider1 from "../assets/slider-1.jpg";
+import slider1 from "../../assets/slider-1.jpg";
 
-const SmoothScroll = () => {
+const PageOneSectionThree = () => {
     return (
         <div className=''>
             {
@@ -43,4 +42,4 @@ const SmoothScroll = () => {
     )
 }
 
-export default SmoothScroll
+export default PageOneSectionThree

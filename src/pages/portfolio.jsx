@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import CategoryMain from '../components/categoryMain'
-import SmoothScroll from '../components/smoothScroll'
+import CategoryMain from '../components/page one/sectionTwo'
+import SmoothScroll from '../components/page one/sectionThree'
 import { ScrollContainer, HorizontalSection } from "react-nice-scroll";
-import CustomerCare from '../components/customerCare';
+import CustomerCare from '../components/page one/sectionFour';
 
 
 const Portfolio = () => {
