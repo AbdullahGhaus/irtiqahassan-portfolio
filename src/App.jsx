@@ -1,5 +1,5 @@
 import './App.css'
-import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import PageOneSectionOne from './components/page one/sectionOne';
 import PageOneSectionTwo from './components/page one/sectionTwo';
 import PageOneSectionThree from './components/page one/sectionThree';
@@ -8,26 +8,12 @@ import PageTwoSectionOne from './components/page two/sectionOne';
 import PageTwoSectionTwo from './components/page two/sectionTwo';
 import PageTwoSectionThree from './components/page two/sectionThree';
 import PageThreeSectionOne from './components/page three/sectionOne';
-import { useEffect } from 'react';
 
-function IframeFixer() {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.log("Route changed:", location.pathname);
-    document.querySelectorAll("iframe").forEach(iframe => {
-      iframe.src = iframe.src; // Refresh each iframe on route change
-    });
-  }, [location]);
-
-  return null;
-}
 
 function App() {
 
   return (
     <Router>
-      <IframeFixer /> {/* This component will reset iframes on navigation */}
       <Routes>
         <Route path="/page-one/section-one" element={<PageOneSectionOne />} />
         <Route path="/page-one/section-two" element={<PageOneSectionTwo />} />
