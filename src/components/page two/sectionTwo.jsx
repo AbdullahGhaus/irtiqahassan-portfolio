@@ -1,21 +1,18 @@
-import React, { useRef } from 'react'
+import { useRef } from "react";
+import gsap from "gsap";
+import { Carousel } from "antd";
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { Link } from "react-router-dom";
 
+// Image Imports
 import hs1 from "../../assets/hs-1.png";
-import test2 from "../../assets/test-2.jpg"
-import test3 from "../../assets/test-3.jpg"
-import test4 from "../../assets/test-4.jpg"
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
-import { Link } from 'react-router-dom';
+import test2 from "../../assets/test-2.jpg";
+import test3 from "../../assets/test-3.jpg";
+import test4 from "../../assets/test-4.jpg";
 
 const PageTwoSectionTwo = () => {
+    const carouselRef = useRef(null);
 
-    const swiperRef = useRef(null);
     const slides = [
         {
             images: {
@@ -87,77 +84,107 @@ const PageTwoSectionTwo = () => {
         },
     ];
 
-    return (
-        <>
-            <div className="relative min-h-screen">
-                <Swiper
-                    onSwiper={(swiper) => (swiperRef.current = swiper)}
-                    navigation={false}
-                    modules={[Navigation, EffectFade]}
-                    effect="fade"
-                    fadeEffect={{ crossFade: true }}
-                    loop
-                    className="w-full min-h-screen"
-                >
-                    {slides.map((_, index) => (
-                        <SwiperSlide key={index}>
-                            <div className='grid grid-cols-12 h-screen'>
-                                <div className='col-span-8 flex flex-col'>
-                                    <div className='grid grid-cols-2 h-full'>
-                                        <img className='object-cover w-full h-full' src={_?.images?.row_one?.first} />
-                                        <img className='object-cover w-full h-full' src={_?.images?.row_one?.second} />
-                                    </div>
-                                    <div className='grid grid-cols-3'>
-                                        <img className='object-cover w-full h-full' src={_?.images?.row_two?.first} />
-                                        <img className='object-cover w-full h-full' src={_?.images?.row_two?.second} />
-                                        <img className='object-cover w-full h-full' src={_?.images?.row_two?.third} />
-                                    </div>
-                                </div>
-                                <div className="col-span-4 flex flex-col justify-center gap-3">
-                                    <div className="flex flex-col gap-2 pl-20 ">
-                                        <div className="text-[#515151] text-[11px] uppercase relative">
-                                            <div className="absolute -top-5 right-0 w-full h-[1.5px] bg-[#707070]" />
-                                            {_?.tag}
-                                        </div>
-                                        <div className="text-[#515151] text-[45px] nigelina leading-12 w-[60%]">
-                                            {_?.main_heading}
-                                        </div>
-                                        <div className="text-[#515151] text-[13px] w-[60%]">
-                                            {_?.description}
-                                        </div>
-                                        <div className='p-2' />
-                                        <Link to={_?.url} target="_top" className=' max-w-fit'>
-                                            <button className="flex items-center justify-center gap-2 px-3 py-2 max-w-fit bg-black text-white rounded-md transition duration-300 cursor-pointer">
-                                                <span className="text-[10px] font-medium">View More</span>
-                                                <ArrowRight size={13} />
-                                            </button>
-                                        </Link>
-                                        <div className='flex items-center pt-5 gap-5'>
-                                            <button
-                                                className={` z-10 p-3 rounded-full transition border cursor-pointer hover:shadow-md`}
-                                                onClick={() => swiperRef.current?.slidePrev()}
-                                            >
-                                                <ChevronLeft size={15} color="black" />
-                                            </button>
+    // Function to animate elements during slide transition
+    const animateSlide = (current, next) => {
+        const incomingSlide = document.querySelectorAll(".slick-slide")[next];
 
-                                            <button
-                                                className={` z-10 p-3 rounded-full transition border cursor-pointer hover:shadow-md`}
-                                                onClick={() => swiperRef.current?.slideNext()}
-                                            >
-                                                <ChevronRight size={15} color="black" />
-                                            </button>
-                                        </div>
+        if (!incomingSlide) return;
+
+        gsap.fromTo(
+            incomingSlide.querySelectorAll(".fade-up"),
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1, ease: "power3.out", stagger: 0.2 }
+        );
+
+        gsap.fromTo(
+            incomingSlide.querySelectorAll(".fade-left"),
+            { opacity: 0, x: 50 },
+            { opacity: 1, x: 0, duration: 1, ease: "power3.out", stagger: 0.2 }
+        );
+
+        gsap.fromTo(
+            incomingSlide.querySelectorAll(".fade-right"),
+            { opacity: 0, x: -50 },
+            { opacity: 1, x: 0, duration: 1, ease: "power3.out", stagger: 0.2 }
+        );
+
+        gsap.fromTo(
+            incomingSlide.querySelectorAll(".fade-down"),
+            { opacity: 0, y: -50 },
+            { opacity: 1, y: 0, duration: 1, ease: "power3.out", stagger: 0.2 }
+        );
+    };
+
+    return (
+        <div className="relative min-h-screen">
+            <Carousel
+                ref={carouselRef}
+                beforeChange={animateSlide} // Trigger animation *before* slide transition
+                dots={false}
+                infinite
+                speed={500}
+                effect="fade"
+                className="w-full min-h-screen"
+            >
+                {slides.map((slide, index) => (
+                    <div key={index}>
+                        <div className="grid grid-cols-12 h-screen">
+                            {/* Left Section */}
+                            <div className="col-span-8 flex flex-col">
+                                <div className="flex items-center justify-center h-[50vh]">
+                                    <img className="object-cover w-full h-full fade-down" src={slide.images.row_one.first} />
+                                </div>
+                                <div className="grid grid-cols-2 h-[50vh]">
+                                    <img className="object-cover w-full h-full fade-right" src={slide.images.row_two.first} />
+                                    <img className="object-cover w-full h-full fade-up" src={slide.images.row_two.second} />
+                                </div>
+                            </div>
+
+                            {/* Right Section */}
+                            <div className="col-span-4 flex flex-col justify-center gap-3">
+                                <div className="flex flex-col gap-2 pl-20">
+                                    <div className="text-[#515151] text-[11px] uppercase relative">
+                                        <div className="absolute -top-5 right-0 w-full h-[1.5px] bg-[#707070]" />
+                                        {slide?.tag}
+                                    </div>
+                                    <div className="text-[#515151] text-[45px] nigelina leading-12 w-[60%]">
+                                        {slide?.main_heading}
+                                    </div>
+                                    <div className="text-[#515151] text-[13px] w-[60%]">
+                                        {slide?.description}
+                                    </div>
+                                    <div className='p-2' />
+                                    <Link to={slide?.url} target="_top" className=' max-w-fit'>
+                                        <button className="flex items-center justify-center gap-2 px-3 py-2 max-w-fit bg-black text-white rounded-md transition duration-300 cursor-pointer">
+                                            <span className="text-[10px] font-medium">View More</span>
+                                            <ArrowRight size={13} />
+                                        </button>
+                                    </Link>
+
+                                    {/* Navigation Buttons */}
+                                    <div className="flex items-center pt-5 gap-5">
+                                        <button
+                                            className="z-10 p-3 rounded-full transition-all border cursor-pointer group hover:shadow-md hover:bg-black"
+                                            onClick={() => carouselRef.current?.prev()}
+                                        >
+                                            <ChevronLeft size={15} className="group-hover:text-white text-black transition-all" />
+                                        </button>
+
+                                        <button
+                                            className="z-10 p-3 rounded-full transition border cursor-pointer group hover:shadow-md hover:bg-black"
+                                            onClick={() => carouselRef.current?.next()}
+                                        >
+                                            <ChevronRight size={15} className="group-hover:text-white text-black transition-all" />
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                        </div>
+                    </div>
+                ))}
+            </Carousel>
+        </div>
+    );
+};
 
-
-            </div>
-        </>
-    )
-}
-
-export default PageTwoSectionTwo
+export default PageTwoSectionTwo;
