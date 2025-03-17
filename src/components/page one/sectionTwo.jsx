@@ -71,7 +71,7 @@ const PageOneSectionTwo = () => {
                         </div>
                     </div>
 
-                    <div className="z-10 w-[50%] text-white text-[12px] font-extralight opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:duration-[1500ms] text-center leading-4">
+                    <div className="z-10 w-[50%] text-white text-[12px] font-extralight md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 group-hover:duration-[1500ms] text-center leading-4 pt-2 md:pt-0">
                         {item.desc}
                     </div>
                 </Link>
