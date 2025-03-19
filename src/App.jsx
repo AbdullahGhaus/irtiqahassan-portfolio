@@ -8,6 +8,9 @@ import PageTwoSectionOne from './components/page two/sectionOne';
 import PageTwoSectionTwo from './components/page two/sectionTwo';
 import PageTwoSectionThree from './components/page two/sectionThree';
 import PageThreeSectionOne from './components/page three/sectionOne';
+import Page1 from './pages/page1';
+import Page2 from './pages/page2';
+import Page3 from './pages/page3';
 
 function App() {
 
@@ -15,6 +18,9 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/page-one" element={<Page1 />} />
+        <Route path="/page-two" element={<Page2 />} />
+        <Route path="/page-three" element={<Page3 />} />
         <Route path="/page-one/section-one" element={<PageOneSectionOne />} />
         <Route path="/page-one/section-two" element={<PageOneSectionTwo />} />
         <Route path="/page-one/section-three" element={<PageOneSectionThree />} />
