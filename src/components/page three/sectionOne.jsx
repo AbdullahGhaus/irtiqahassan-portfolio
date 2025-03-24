@@ -11,21 +11,21 @@ const PageThreeSectionOne = () => {
     return (
         <div className=" flex flex-col">
             <div className="grid grid-cols-2 h-1/2">
-                <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={hs1} />
-                <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={residentalbg} />
+                <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={hs1}  />
+                <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={residentalbg}  />
             </div>
             <div className="grid grid-cols-12 h-1/2">
                 <div className="col-span-8 flex flex-col">
                     <div className="grid grid-cols-2 h-1/2">
-                        <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={test2} />
-                        <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={test3} />
+                        <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={test2}  />
+                        <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={test3}  />
                     </div>
                     <div className="h-1/2">
-                        <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={test4} />
+                        <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={test4}  />
                     </div>
                 </div>
                 <div className="col-span-4">
-                    <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={horizontalImage} />
+                    <Image height={"100%"} width={"100%"} className="max-w-full object-cover" src={horizontalImage}  />
                 </div>
             </div>
         </div>
