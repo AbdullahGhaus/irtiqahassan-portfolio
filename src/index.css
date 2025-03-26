@@ -39,12 +39,16 @@ textarea {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.ant-image-preview-img{
+/* .ant-image-preview-img{
     position: absolute;
     top: 10%;
+    
+} */
+
+.ant-image-preview-img {
+    max-width: 40vw !important;  /* Adjust max width */
+    max-height: 40vh !important; /* Adjust max height */
 }
-
-
 
 /*  */
 
