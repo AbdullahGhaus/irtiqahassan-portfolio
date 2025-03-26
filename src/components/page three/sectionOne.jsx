@@ -10,21 +10,21 @@ const PageThreeSectionOne = () => {
     return (
         <div className="flex flex-col">
             <div className="grid grid-cols-2 h-1/2">
-                <img className="max-w-full object-cover w-full h-full transition-transform duration-300 hover:scale-135" src={hs1} />
-                <img className="max-w-full object-cover w-full h-full transition-transform duration-300 hover:scale-135" src={residentalbg} />
+                <img className="max-w-full object-cover w-full h-full transition-transform duration-400 hover:scale-115" src={hs1} />
+                <img className="max-w-full object-cover w-full h-full transition-transform duration-400 hover:scale-115" src={residentalbg} />
             </div>
             <div className="grid grid-cols-12 h-1/2">
                 <div className="col-span-8 flex flex-col">
                     <div className="grid grid-cols-2 h-1/2">
-                        <img className="max-w-full object-cover w-full h-full transition-transform duration-300 hover:scale-135" src={test2} />
-                        <img className="max-w-full object-cover w-full h-full transition-transform duration-300 hover:scale-135" src={test3} />
+                        <img className="max-w-full object-cover w-full h-full transition-transform duration-400 hover:scale-115" src={test2} />
+                        <img className="max-w-full object-cover w-full h-full transition-transform duration-400 hover:scale-115" src={test3} />
                     </div>
                     <div className="h-1/2">
-                        <img className="max-w-full object-cover w-full h-full transition-transform duration-300 hover:scale-135" src={test4} />
+                        <img className="max-w-full object-cover w-full h-full transition-transform duration-400 hover:scale-115" src={test4} />
                     </div>
                 </div>
                 <div className="col-span-4">
-                    <img className="max-w-full object-cover w-full h-full transition-transform duration-300 hover:scale-135" src={horizontalImage} />
+                    <img className="max-w-full object-cover w-full h-full transition-transform duration-400 hover:scale-115" src={horizontalImage} />
                 </div>
             </div>
         </div>
