@@ -44,11 +44,11 @@ const PageOneSectionFour = () => {
         <div className="min-h-screen relative">
             {/* Title and Border Lines */}
             <div className="relative flex items-center justify-center z-[10]">
-                <div className="absolute left-0 top-[85px] w-[53%] border-t border-white"></div>
-                <h2 className="absolute top-16 left-[55%] text-[50px] nigelina text-white leading-14 tracking-wider">
+                <div className="hidden md:flex absolute left-0 top-[85px] w-[53%] border-t border-white"></div>
+                <h2 className="absolute top-16 md:left-[55%] left-[20%] text-[50px] nigelina text-white leading-14 tracking-wider">
                     CUSTOMER <br /> STORIES
                 </h2>
-                <div className="absolute right-0 top-[140px] w-[31%] border-t border-white"></div>
+                <div className="hidden md:flex absolute right-0 top-[140px] w-[31%] border-t border-white"></div>
             </div>
 
             {/* Swiper with Fade Effect and Custom Navigation */}
@@ -72,7 +72,7 @@ const PageOneSectionFour = () => {
                                 />
                                 <div className="absolute bg-black inset-0 opacity-40"></div>
 
-                                <div className="absolute top-[30%] left-[20%]  z-[20] w-[500px] h-[380px] rounded-2xl backdrop-blur-xl border-2 border-[#C6C6C6] p-3 flex flex-col justify-between">
+                                <div className="absolute top-[30%] left-[20%]  z-[20] w-[60%] md:w-[500px] h-[380px] rounded-2xl backdrop-blur-xl border-2 border-[#C6C6C6] p-3 flex flex-col justify-between">
                                     <div className="absolute top-[-80px] left-8 text-white text-[200px]">"</div>
                                     <div className="text-[15px] text-white p-5 pt-10">"{_?.text}"</div>
                                     <div className="flex items-center justify-end pb-3 pr-3">
