@@ -44,7 +44,7 @@ const PageOneSectionTwo = () => {
 
     return (
         <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 h-screen bg-fixed bg-center cursor-pointer transition-all duration-500"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 h-[1200px] md:h-screen bg-fixed bg-center cursor-pointer transition-all duration-500"
             style={
                 {
                     backgroundImage: `url(${images[hoveredItem] || images.default})`,
@@ -63,7 +63,7 @@ const PageOneSectionTwo = () => {
                     aria-label={item.head}
                 // onClick={() => navigate(item?.url)}
                 >
-                    <div className="absolute inset-0 transition-all duration-300 bg-black/50 backdrop-blur-md lg:backdrop-blur-none lg:group-hover:backdrop-blur-[21px]"></div>
+                    <div className="absolute inset-0 transition-all duration-300 bg-black/50 backdrop-blur-none lg:group-hover:backdrop-blur-[21px]"></div>
 
                     <div className="z-10 flex flex-col gap-1 sm:gap-2 translate-y-6 group-hover:translate-y-0 transition-all duration-300">
                         <div className="text-white text-[40px] tracking-wider leading-10 uppercase nigelina whitespace-pre-line text-center">

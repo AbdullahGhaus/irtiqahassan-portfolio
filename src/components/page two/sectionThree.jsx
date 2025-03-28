@@ -10,10 +10,10 @@ const PageTwoSectionThree = () => {
 
     return (
         <div className="flex flex-col h-screen">
-            <div className="flex items-center justify-center px-5 pt-5 !mt-10">
+            <div className="flex items-center justify-center px-5 pt-5 md:!mt-10">
                 <span className="text-[45px] nigelina uppercase text-[#515151] relative">
                     <span className="absolute top-[50%] -left-20 w-[50px] h-[2px] bg-[#C0A07A]" />
-                    <span className="absolute top-[50%] -right-20 w-[50px] h-[2px] bg-[#C0A07A]" />
+                    <span className="hidden md:flex absolute top-[50%] -right-20 w-[50px] h-[2px] bg-[#C0A07A]" />
                     Explore your retreat
                 </span>
             </div>
@@ -45,7 +45,7 @@ const PageTwoSectionThree = () => {
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
                                 />
                             )}
-                            <span className="nigelina text-[35px] tracking-wider z-[2] uppercase text-white">
+                            <span className="nigelina text-[20px] md:text-[35px] tracking-wider z-[2] uppercase text-white">
                                 Residential
                             </span>
                         </motion.div>
@@ -73,7 +73,7 @@ const PageTwoSectionThree = () => {
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                             />}
-                            <span className="nigelina text-[35px] tracking-wider z-[1] uppercase text-white">
+                            <span className="nigelina text-[20px] md:text-[35px] tracking-wider z-[1] uppercase text-white">
                                 Commercial
                             </span>
                         </motion.div>
@@ -104,7 +104,7 @@ const PageTwoSectionThree = () => {
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
                                 />
                             )}
-                            <span className="nigelina text-[35px] tracking-wider z-[2] uppercase text-white">
+                            <span className="nigelina text-[20px] md:text-[35px] tracking-wider z-[2] uppercase text-white">
                                 Architecture
                             </span>
                         </motion.div>
@@ -132,7 +132,7 @@ const PageTwoSectionThree = () => {
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                             />}
-                            <span className="nigelina text-[35px] tracking-wider z-[1] uppercase text-white">
+                            <span className="nigelina text-[20px] md:text-[35px] tracking-wider z-[1] uppercase text-white">
                                 Furniture
                             </span>
                         </motion.div>
@@ -161,7 +161,7 @@ const PageTwoSectionThree = () => {
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                             />}
-                            <span className="nigelina text-[35px] tracking-wider z-[2] uppercase text-white">
+                            <span className="nigelina text-[20px] md:text-[35px] tracking-wider z-[2] uppercase text-white">
                                 Residential
                             </span>
                         </motion.div>
@@ -189,7 +189,7 @@ const PageTwoSectionThree = () => {
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                             />}
-                            <span className="nigelina text-[35px] tracking-wider z-[2] uppercase text-white">
+                            <span className="nigelina text-[20px] md:text-[35px] tracking-wider z-[2] uppercase text-white">
                                 Residential
                             </span>
                         </motion.div>
@@ -217,7 +217,7 @@ const PageTwoSectionThree = () => {
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                             />}
-                            <span className="nigelina text-[35px] tracking-wider z-[2] uppercase text-white">
+                            <span className="nigelina text-[20px] md:text-[35px] tracking-wider z-[2] uppercase text-white">
                                 Residential
                             </span>
                         </motion.div>

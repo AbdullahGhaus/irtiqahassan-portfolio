@@ -44,7 +44,7 @@ const PageTwoSectionTwo = () => {
                 }
             },
             tag: "privacy & space",
-            main_heading: "EXPLORE OUR HOME",
+            main_heading: "EXPLORE OUR OFFICE",
             description: "From the moment you step into the expansive living area, you’ll be immersed in the awe-inspiring sea views that define every room. The beautifully appointed sitting areas, elegant dining spaces, and inviting bedrooms create a refined and welcoming ambiance.",
             url: "https://67443c.myshopify.com/pages/gallery"
         },
@@ -78,7 +78,7 @@ const PageTwoSectionTwo = () => {
                 }
             },
             tag: "privacy & space",
-            main_heading: "EXPLORE OUR HOME",
+            main_heading: "EXPLORE OUR OFFICE",
             description: "From the moment you step into the expansive living area, you’ll be immersed in the awe-inspiring sea views that define every room. The beautifully appointed sitting areas, elegant dining spaces, and inviting bedrooms create a refined and welcoming ambiance.",
             url: "https://67443c.myshopify.com/pages/gallery"
         },
@@ -130,7 +130,7 @@ const PageTwoSectionTwo = () => {
                     <div key={index}>
                         <div className="grid grid-cols-12 h-screen">
                             {/* Left Section */}
-                            <div className="col-span-8 flex flex-col">
+                            <div className="col-span-8 hidden md:flex flex-col">
                                 <div className="flex items-center justify-center h-[50vh]">
                                     <img className="object-cover w-full h-full fade-down" src={slide.images.row_one.first} />
                                 </div>
@@ -141,7 +141,7 @@ const PageTwoSectionTwo = () => {
                             </div>
 
                             {/* Right Section */}
-                            <div className="col-span-4 flex flex-col justify-center gap-3">
+                            <div className="col-span-12 md:col-span-4 flex flex-col justify-center gap-3">
                                 <div className="flex flex-col gap-2 pl-20">
                                     <div className="text-[#515151] text-[11px] uppercase relative">
                                         <div className="absolute -top-5 right-0 w-full h-[1.5px] bg-[#707070]" />
