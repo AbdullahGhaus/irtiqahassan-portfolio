@@ -43,8 +43,9 @@ const PageOneSectionTwo = () => {
     ];
 
     return (
+        <>
         <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 h-[1200px] md:h-screen bg-fixed bg-center cursor-pointer transition-all duration-500"
+            className="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 h-[1200px] md:h-screen bg-fixed bg-center cursor-pointer transition-all duration-500"
             style={
                 {
                     backgroundImage: `url(${images[hoveredItem] || images.default})`,
@@ -77,6 +78,35 @@ const PageOneSectionTwo = () => {
                 </Link>
             ))}
         </div>
+        
+        <div
+            className="grid sm:hidden">
+            {data.map((item, index) => (
+                <Link
+                    to={item?.url}
+                    key={index}
+                    target="_top"
+                    className="flex flex-col items-center gap-3 justify-center relative group border border-[#ffffff3d]"
+                    onMouseEnter={() => setHoveredItem(index)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                    aria-label={item.head}
+                // onClick={() => navigate(item?.url)}
+                >
+                    <div className="absolute inset-0 transition-all duration-300 bg-black/50 backdrop-blur-none lg:group-hover:backdrop-blur-[21px]"></div>
+
+                    <div className="z-10 flex flex-col gap-1 sm:gap-2 group-hover:translate-y-0 transition-all duration-300">
+                        <div className="text-white text-[20px] tracking-wider leading-10 uppercase nigelina text-center">
+                            {item.head?.replace(" ", " ")}
+                        </div>
+                    </div>
+
+                    {/* <div className="z-10 w-[50%] text-white text-[12px] font-extralight md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 group-hover:duration-[1500ms] text-center leading-4 pt-2 md:pt-0">
+                        {item.desc}
+                    </div> */}
+                </Link>
+            ))}
+        </div>
+        </>
     );
 };
 
